@@ -19,9 +19,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 //master data surat
 // Route::apiResource('/rest/customer','CustomerController');
-Route::get('/loginandroid','masteruser\LoginAndroidController@login')->name('android.login');
+Route::post('/loginandroid','masteruser\LoginAndroidController@login')->name('android.login');
 Route::get('/indexcustomer','masteruser\LoginAndroidController@indexcustomer')->name('android.indexcustomer');
-Route::get('/updatecustomer/{id}','masteruser\LoginAndroidController@updatecustomer')->name('android.updatecustomer');
+Route::post('/updatecustomer/{id}','masteruser\LoginAndroidController@updatecustomer')->name('android.updatecustomer');
 
 
 Route::post('/upload-berkas/{id}/{module}','BerkasController@update')->name('uploadberkas');
