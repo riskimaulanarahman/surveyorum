@@ -46,7 +46,7 @@ class LoginAndroidController extends Controller
     public function indexcustomer(Request $req) {
         try {
             
-            $data = Customer::with(['users','userfv'])->get();
+            $data = Customer::where('status','Belum Selesai')->with(['users','userfv'])->get();
 
             return response()->json(['status' => true, "message" => "Menampilkan Data Customer" , 'data' => $data]);
 
