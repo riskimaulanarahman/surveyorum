@@ -56,6 +56,18 @@ class LoginAndroidController extends Controller
         }
     }
 
+    public function getcustomer($id) {
+        try {
+            $data = Customer::where('id_cust',$id)->with(['users','userfv'])->first();
+
+            return response()->json(['status' => true, "message" => "Menampilkan Data Customer" , 'data' => $data]);
+
+        } catch (\Exception $e){
+
+            return response()->json(["status" => false, "message" => $e->getMessage()]);
+        }
+    }
+
     public function updatecustomer(Request $req, $id) {
         $iduser = $req->iduser;
 

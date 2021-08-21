@@ -21,6 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // Route::apiResource('/rest/customer','CustomerController');
 Route::post('/loginandroid','masteruser\LoginAndroidController@login')->name('android.login');
 Route::get('/indexcustomer','masteruser\LoginAndroidController@indexcustomer')->name('android.indexcustomer');
+Route::get('/getcustomer/{id}','masteruser\LoginAndroidController@getcustomer')->name('android.getcustomer');
 Route::post('/updatecustomer/{id}','masteruser\LoginAndroidController@updatecustomer')->name('android.updatecustomer');
 
 
