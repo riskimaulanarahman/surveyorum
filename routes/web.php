@@ -22,30 +22,12 @@ Route::group( ['as' => 'admin.','middleware' => ['auth']], function() {
     Route::get('/', 'HomeController@index')->name('index');
 
     Route::get('/customer','CustomerController@show')->name('customer');
-    // Route::get('/surat-keluar','masterdatasurat\suratkeluar\SuratkeluarController@show')->name('suratkeluar');
-    // Route::get('/surat-pelayanan','masterdatasurat\suratpelayanan\SuratpelayananController@show')->name('suratpelayanan');
-    // Route::get('/surat-vital','masterdatasurat\suratpelayanan\SuratvitalController@show')->name('suratvital');
-
-    //referensi
-    Route::get('/ref-penduduk','referensi\pendudukController@show')->name('refpenduduk');
-    Route::get('/ref-suratpelayanan','referensi\suratpelayananController@show')->name('refsuratpelayanan');
-    Route::get('/ref-kelengkapansuratpelayanan','referensi\kelengkapansuratpelayananController@show')->name('refkelengkapansuratpelayanan');
 
     //master user
     Route::get('/master-user','masteruser\LoginUserController@show')->name('masteruser');
 
-    Route::get('/bantuan', 'MainController@bantuan')->name('bantuan');
-
     //api
     Route::apiResource('/api/customer','CustomerController');
-    Route::apiResource('/api/surat-masuk','masterdatasurat\suratmasuk\SuratmasukController');
-    Route::apiResource('/api/surat-keluar','masterdatasurat\suratkeluar\SuratkeluarController');
-    Route::apiResource('/api/surat-pelayanan','masterdatasurat\suratpelayanan\SuratpelayananController');
-    Route::apiResource('/api/surat-vital','masterdatasurat\suratpelayanan\SuratvitalController');
-
-    //api list
-    Route::post('/api/list-suratpelayanan','API\ListController@listSuratPelayanan');
-    Route::post('/api/list-suratvital','API\ListController@listSuratVital');
 
     
 });

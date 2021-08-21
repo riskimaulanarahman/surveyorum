@@ -216,11 +216,157 @@ $(document).ready(function(){
                 
                 // allowUpdating: (role=="admin" || role == "marketing" || role == "marketing")?true:false,
                 allowUpdating: true,
-                allowDeleting: false
+                allowDeleting: false,
+                popup: {
+                    title: "Customer Info",
+                    showTitle: false,
+                    width: 700,
+                    height: 525,
+                    position: {
+                        my: "center",
+                        at: "center",
+                        of: window
+                    }
+                },
+                form: {
+                    items: [{
+                        caption: "Data Customer *Wajib, Pasangan Opsional",
+                        itemType: "group",
+                        colCount: 2,
+                        colSpan: 2,
+                        items: [
+                            "nama_cust",
+                            "tempat_lahir_cust",
+                            "tgl_lahir_cust",
+                            "no_hp_cust",
+                            "email_cust",
+                            "nama_pasangan",
+                            "tempat_lahir_pasangan",
+                            "tgl_lahir_pasangan",
+                            "no_hp_pasangan",
+                            "email_pasangan",
+                        ]
+                    },
+                    {
+                        caption: "Lokasi *Wajib",
+                        itemType: "group",
+                        colCount: 2,
+                        colSpan: 2,
+                        items: [
+                            "lokasi",
+                        ]
+                    },
+                    {
+                        caption: "Kondisi Survey *Wajib",
+                        itemType: "group",
+                        colCount: 2,
+                        colSpan: 2,
+                        items: [
+                            "bertemu_dengan",
+                            "pilihan_survey",
+                            "alamat_survey",
+                        ]
+                    },
+                    {
+                        caption: "Status Perkawinan & Tanggungan *Wajib",
+                        itemType: "group",
+                        colCount: 2,
+                        colSpan: 2,
+                        items: [
+                            "status_kawin",
+                            "tanggungan",
+                            "catatan_tanggungan",
+                        ]
+                    },
+                    {
+                        caption: "Pekerjaan *Wajib",
+                        itemType: "group",
+                        colCount: 2,
+                        colSpan: 2,
+                        items: [
+                            "tempat_kerja_cust",
+                            "jabatan_cust",
+                            "alamat_kantor_cust",
+                            "gaji_cust",
+                            "pengeluaran_cust",
+                            "catatan_pekerjaan_cust",
+                        ]
+                    },
+                    {
+                        caption: "Pekerjaan Pasangan (jika Lajang atau Ibu rumah tangga tidak perlu diisi)",
+                        itemType: "group",
+                        colCount: 2,
+                        colSpan: 2,
+                        items: [
+                            "tempat_kerja_pasangan",
+                            "jabatan_pasangan",
+                            "alamat_kantor_pasangan",
+                            "gaji_pasangan",
+                            "catatan_pekerjaan_pasangan",
+                        ]
+                    },
+                    {
+                        caption: "Penjamin (diisi jika cust lajang, cerai hidup, cerai mati) ",
+                        itemType: "group",
+                        colCount: 2,
+                        colSpan: 2,
+                        items: [
+                            "nama_penjamin",
+                            "hubungan_penjamin",
+                            "no_hp_penjamin",
+                            "catatan_penjamin",
+                        ]
+                    },
+                    {
+                        caption: "E-Call (nomor hp keluarga yang tidak serumah) *Wajib",
+                        itemType: "group",
+                        colCount: 2,
+                        colSpan: 2,
+                        items: [
+                            "nama_ecall",
+                            "hubungan_ecall",
+                            "alamat_ecall",
+                            "no_hp_ecall",
+                        ]
+                    },
+                    {
+                        caption: "Informasi dari lingkungan *Wajib",
+                        itemType: "group",
+                        colCount: 2,
+                        colSpan: 2,
+                        items: [
+                            "keberadaan_lingkungan",
+                            "catatan_lingkungan",
+                        ]
+                    },
+                    {
+                        caption: "Peruntukan unit *Wajib",
+                        itemType: "group",
+                        colCount: 2,
+                        colSpan: 2,
+                        items: [
+                            "unit_untuk",
+                            "catatan_unit",
+                        ]
+                    },
+                    {
+                        caption: "Status Data",
+                        itemType: "group",
+                        colCount: 2,
+                        colSpan: 2,
+                        items: [
+                            "status",
+                            
+                        ]
+                    },
+
+                ]
+                },
             },
             // scrolling: {
             //     mode: "infinite"
             // },
+            
             pager: {
                 allowedPageSizes: [5, 10, 15, 30],
                 showInfo: true,
