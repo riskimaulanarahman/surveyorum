@@ -77,8 +77,12 @@ class LoginAndroidController extends Controller
         try {
             $data = Customer::findOrFail($id);
 
-            $data->update($reqData);
-            return response()->json(["status" => "success", "message" => "Berhasil Ubah Data"]);
+            if($data->status == 'Sudah Selesai') {
+                return response()->json(["status" => "error", "message" => "Status (Sudah Selesai) Data Tidak Bisa Dirubah"]);
+            } else {
+                $data->update($reqData);
+                return response()->json(["status" => "success", "message" => "Berhasil Ubah Data"]);
+            }
 
         } catch (\Exception $e){
 

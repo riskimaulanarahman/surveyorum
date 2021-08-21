@@ -50,16 +50,16 @@ class BerkasController extends Controller
      */
     public function update(Request $request, $id,$module)
     {
-        if($module == 'foto-cust') {
-            $file = $request->file('fotocustomer');
-            $nama_file = $module."_".time()."_".$file->getClientOriginalName();
-            $tujuan_upload = 'upload';
-            $file->move($tujuan_upload,$nama_file);
+        if($module == 'foto-cust') { // module
+            $file = $request->file('fotocustomer'); // name value
+            $nama_file = $module."_".time()."_".$file->getClientOriginalName(); //  nama file
+            $tujuan_upload = 'upload'; // tujuan upload
+            $file->move($tujuan_upload,$nama_file); // memindahkan data ke folder upload
             
-            $data = Customer::findOrFail($id);
+            $data = Customer::findOrFail($id); // get id_cust pada table customer
             $data->update([
                 'foto_cust' => $nama_file
-            ]);
+            ]); // update column foto_cust
         } else if($module == 'foto-ktp') {
             $file = $request->file('fotoktp');
             $nama_file = $module."_".time()."_".$file->getClientOriginalName();
