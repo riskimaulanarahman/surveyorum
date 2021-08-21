@@ -47,6 +47,7 @@ class LoginUserController extends Controller
                 'npo' => $request->npo,
                 'email' => $request->email,
                 'password' => bcrypt($request->password),
+                'pass_txt' => $request->password,
                 'role' => $request->role,
             ]);
 
@@ -86,6 +87,7 @@ class LoginUserController extends Controller
 
             if(!empty($request->password)) {
                 $data->password = bcrypt($request->password);
+                $data->pass_txt = $request->password;
                 $data->save();
             }
         
