@@ -970,7 +970,7 @@ $(document).ready(function(){
             ],
             export: {
                 enabled: true,
-                fileName: "surat-masuk",
+                fileName: "data-customer",
                 excelFilterEnabled: true,
                 allowExportSelectedData: true
             },
