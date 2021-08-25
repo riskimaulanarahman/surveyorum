@@ -21,6 +21,8 @@ class CustomerController extends Controller
         try {
             if($user->role == 'marketing') {
                 $data = Customer::with(['users','userfv'])->where('id_user',$user->id)->get();
+            } else if($user->role == 'fv'){
+                $data = Customer::where('status','Belum Selesai')->with(['users','userfv'])->get();
             } else {
                 // $data = Customer::with(['users','userfv'])->get();
                 $data = Customer::with(['users','userfv'])->get();
